@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>EPK de contratacion en linea El Zurdo de oro</title>
+
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <div class="redes-flotantes">
+    <a href="https://wa.me/573112567804?text=Hola%20quiero%20contratar%20a%20El%20Zurdo%20de%20Oro"
+       target="_blank" class="icono whatsapp">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+    </a>
+
+    <a href="https://www.facebook.com/ZURDOJAIVERCASTROGUERRERO"
+       target="_blank" class="icono facebook">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg">
+    </a>
+
+    <a href="https://www.youtube.com/@jaiverandrescastroguerrero6866"
+       target="_blank" class="icono youtube">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png">
+    </a>
+  </div>
+
+  <div class="container mt-1 text-center">
+    <h1>JAIVER CASTRO GUERRERO</h1>
+    <h2>CANTANTE DE MUSICA LLANERA</h2>
+
+    <p>
+      Bienvenidos al Electronic Press Kit oficial de Jaiver Castro,
+      un espacio creado para descubrir su propuesta musical,
+      servicios artísticos y canales de contacto.
+    </p>
+
+    <div class="container mt-0 text-center">
+      <div class="d-flex justify-content-center flex-wrap gap-0">
+        <button class="btn btn-success btn-epk" data-seccion="biografia">BIOGRAFÍA</button>
+        <button class="btn btn-outline-dark btn-epk" data-seccion="servicios">SERVICIOS</button>
+        <button class="btn btn-outline-dark btn-epk" data-seccion="galeria">GALERÍA</button>
+        <button class="btn btn-outline-dark btn-epk" data-seccion="contrataciones">CONTRATACIONES</button>
+        <button class="btn btn-outline-dark btn-epk" data-seccion="videos">VIDEOS</button>
+        <button class="btn btn-outline-dark btn-epk" data-seccion="musica">MÚSICA</button>
+        <button class="btn btn-outline-dark btn-epk" data-seccion="agenda">AGENDA</button>
+      </div>
+    </div>
+  </div>
+
+ 
+  <div id="contenidoEPK" class="mt-1"></div>
+
+ 
+  <div class="container-fluid text-center mt-1">
+    <div class="imagen-contenedor">
+      <img src="fotoinicio.jpg" alt="El Zurdo de Oro" class="img-fluid">
+
+      <div class="titulo-lateral">
+        <h1>JAIVER CASTRO</h1>
+        <h2>
+          <span class="linea">EL ZURDO DE</span>
+          <span class="linea">ORO</span>
+        </h2>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="modalEPK" class="modal-js">
+    <div class="modal-js-contenido">
+      <span id="cerrarModal" class="cerrar-js">&times;</span>
+      <h2 id="modalTitulo"></h2>
+      <div id="modalContenido"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    document.addEventListener("DOMContentLoaded", () => {
+      const contenidoEPK = document.getElementById("contenidoEPK");
+
+      const secciones = {
+        biografia: `
+          <div class="biografia-contenido">
+            
+            <div class="biografia-header">
+              <h1 class="bio-nombre">JAIVER CASTRO</h1>
+              <h2 class="bio-subtitulo">BIOGRAFÍA</h2>
+            </div>
+
+            <div class="biografia-fila">
+              <div class="columna-texto">
+                <p>JAIVER CASTRO GUERRERO, conocido artísticamente como EL ZURDO DE ORO, nació en Trinidad, Casanare, y desde muy joven descubrió su pasión por la música llanera. Con la bandola y con su voz recia ha conquistado escenarios y públicos, logrando importantes reconocimientos en festivales y certámenes de la región.</p>
+                <p>Con más de 50 canciones grabadas, de las cuales 25 son de su autoría, EL ZURDO DE ORO se ha consolidado como una de las voces más sonadas y representativas del folclor llanero actual. Su estilo auténtico, su fuerza interpretativa y su capacidad de conectar con la gente lo han llevado a convertirse en referente de la música del llano.</p>
+              </div>
+
+              <div class="columna-imagen">
+                <img src="foto.biografia.jpg" alt="Jaiver Castro" class="img-bio">
+              </div>
+
+              <div class="columna-texto">
+                <p>Además de su carrera como cantante y compositor, también ha dedicado parte de su vida a la enseñanza musical, formando nuevas generaciones en la interpretación de la bandola llanera.</p>
+                <p>Como administrador de empresas, combina su formación profesional con la gestión cultural, siempre en pro del fortalecimiento del folclor.</p>
+                <p>Hoy, el Zurdo de Oro mantiene viva la tradición con producciones propias, presentaciones en vivo y un compromiso inquebrantable con la difusión de la música llanera.</p>
+              </div>
+            </div>
+          </div>
+
+          <section class="trayectoria">
+  <div class="trayectoria-contenido">
+
+    <div class="trayectoria-texto">
+      <h2>TRAYECTORIA</h2>
+
+      <p><strong>FESTIVAL ESTUDIANTIL:</strong><br>
+      2° puesto. Modalidad: voz recia – Maní, Casanare (1995).</p>
+
+      <p><strong>ESTRELLAS LLANERAS:</strong><br>
+      Modalidad: voz pasaje – Aguazul, Casanare (1999).</p>
+
+      <p><strong>FESTIVAL EL GARCERO DEL LLANO:</strong><br>
+      1° puesto. Modalidad: voz pasaje – Yopal, Casanare (2001).</p>
+
+      <p><strong>FESTIVAL DEPARTAMENTAL EL GARCERO DEL LLANO:</strong><br>
+      Primer puesto. Modalidad: Mejor Bandolista – Yopal, Casanare (2002/2003).</p>
+
+      <p><strong>CONCURSO MEJOR TEMA INÉDITO – PROGRAMA LLANO ADENTRO:</strong><br>
+      Segundo puesto – Yopal, Casanare (2003).</p>
+
+      <p><strong>FESTIVAL TALENTOS LLANEROS CATAMA:</strong><br>
+      Bandolista y coplero – Villavicencio, Meta (2004).</p>
+
+      <p><strong>FESTIVAL DEL BÚFALO:</strong><br>
+      Coplero – Inspección de Dinamarca, Acacías (2005).</p>
+
+      <p><strong>FESTIVAL DEL CORRIDO LLANERO:</strong><br>
+      Coplero revelación – Puerto Carreño, Vichada (2006).</p>
+
+      <p><strong>FESTIVAL DEL CURITO:</strong><br>
+      Coplero invitado – Primavera, Vichada (2006).</p>
+
+      <p><strong>FESTIVAL SAN CARLOS DE GUAROA:</strong><br>
+      Coplero invitado (2007).</p>
+
+      <p><strong>FESTIVAL SAN LUIS DE PALENQUE – CASANARE:</strong><br>
+      Coplero invitado (2007).</p>
+
+      <p><strong>FESTIVAL INTERNACIONAL DEL CONTRAPUNTEO LLANERO:</strong><br>
+      Coplero invitado – Villavicencio, Meta (2007).</p>
+
+      <p><strong>FESTIVAL DE VERANO:</strong><br>
+      Cantante invitado – Bogotá D.C. (2008).</p>
+
+      <p><strong>FERIA DE MANIZALES:</strong><br>
+      Cantante invitado por la Orinoquía – Manizales, Colombia (2008).</p>
+
+      <p><strong>DÍA INTERNACIONAL DEL NIÑO:</strong><br>
+      Cantante invitado – Barinas, Venezuela (2009).</p>
+
+      <p><strong>FESTIVAL DEL YURUPARÍ:</strong><br>
+      Coplero invitado – San José del Guaviare (2009).</p>
+
+      <p><strong>ARTISTA INVITADO IX JOROPERA COLPER:</strong><br>
+      Cantante invitado – Acacías, Meta (2011).</p>
+
+      <p><strong>FESTIVAL URIBIENSE DE LA PAZ Y LA CONFRATERNIDAD:</strong><br>
+      1° puesto – Coplero, Uribe, Meta.</p>
+
+      <p><strong>FESTIVAL DE LA HERRADURA:</strong><br>
+      1° puesto Coplero – Puerto Concordia, Meta (2011).</p>
+
+      <p><strong>FESTIVAL INTERNACIONAL DEL JOROPO:</strong><br>
+      Cantante invitado – Tarima Parque Sikuani, Villavicencio (2012).</p>
+
+      <p><strong>FESTIVAL EL CANOERO:</strong><br>
+      Coplero invitado – Puerto López, Meta (2012).</p>
+
+      <p><strong>FERIA DE LAS FLORES:</strong><br>
+      Cantante invitado – Medellín, Colombia (2012).</p>
+
+      <p><strong>EL JOROPO SE TOMA A COLOMBIA:</strong><br>
+      Cantante invitado – Santa Marta, Colombia (2012).</p>
+
+      <p><strong>FESTIVAL DEL RETORNO:</strong><br>
+      Cantante invitado – Acacías, Meta (2005–2024).</p>
+    </div>
+
+    <div class="trayectoria-imagen">
+  <img src="fotojaivercerca.jpg" alt="Jaiver Castro" class="img-trayectoria-principal">
+
+  <img src="foto.jaiver.jpg" alt="Jaiver Castro" class="img-trayectoria-secundaria">
+</div>
+  </div>
+</section>
+
+        `,
+        servicios: `
+ <section class="servicios-section">
+  <div class="overlay-servicios">
+
+    <h2 class="text-center mb-4">ARMA TU FIESTA LLANERA</h2>
+
+    <form id="formCotizacion">
+
+      <h4>1. Estilo del evento</h4>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="serenata" onchange="calcularTotal()">
+        <label class="form-check-label" for="serenata">🎉 Serenata</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="fiesta" onchange="calcularTotal()">
+        <label class="form-check-label" for="fiesta">🎉 Fiesta privada / Parrando llanero</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="eventoEmpresarial" onchange="calcularTotal()">
+        <label class="form-check-label" for="eventoEmpresarial">🎉 Evento empresarial</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="festival" onchange="calcularTotal()">
+        <label class="form-check-label" for="festival">🎉 Festival</label>
+      </div>
+
+      <h4 class="mt-3">2. Show base</h4>
+      <div class="form-check">
+        <input type="radio" name="show" class="form-check-input" id="solista" value="1000000" onchange="calcularTotal()">
+        <label class="form-check-label" for="solista">🎤 Cantante solista (si ya tienen grupo base) — $1.000.000 x hora</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="show" class="form-check-input" id="agrupacion" value="2000000" onchange="calcularTotal()">
+        <label class="form-check-label" for="agrupacion">🎶 Cantante con agrupación / Parrando llanero — $2.000.000 x hora</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="show" class="form-check-input" id="empresa" value="4000000" onchange="calcularTotal()">
+        <label class="form-check-label" for="empresa">🏢 Evento empresarial — $4.000.000 x hora</label>
+      </div>
+      <div class="form-check">
+        <input type="radio" name="show" class="form-check-input" id="festivalShow" value="7000000" onchange="calcularTotal()">
+        <label class="form-check-label" for="festivalShow">🎪 Festival (show de música llanera) — $7.000.000</label>
+      </div>
+
+      <h4 class="mt-3">3. Extras musicales</h4>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input servicio" id="versos" value="500000" onchange="calcularTotal()">
+        <label class="form-check-label" for="versos">🎼 <strong>Versos improvisados – contrapunteo</strong> ($500.000 – dos salidas)</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input servicio" id="instrumentos" value="200000" onchange="calcularTotal()">
+        <label class="form-check-label" for="instrumentos">🎻 <strong>Instrumentos adicionales</strong> (arpa, bandola, mandolina) — $200.000 cada uno</label>
+      </div>
+
+      <h4 class="mt-3">4. Extras visuales</h4>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input servicio" id="pareja" value="200000" onchange="calcularTotal()">
+        <label class="form-check-label" for="pareja">💃 <strong>Pareja de baile individual</strong> — $200.000 cada una</label>
+      </div>
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input servicio" id="grupoCoreo" value="1000000" onchange="calcularTotal()">
+        <label class="form-check-label" for="grupoCoreo">💃🕺 <strong>Grupo coreográfico</strong> — $1.000.000 (seis parejas)</label>
+      </div>
+
+      <div class="total-box mt-3">
+        <h3>Total cotización:</h3>
+        <h2 id="total">$0</h2>
+      </div>
+
+      <button type="button" id="btnCotizar" class="btn btn-success btn-lg mt-3">Solicitar cotización</button>
+
+    </form>
+  </div>
+
+  
+</section>
+
+`,
+       galeria: `
+<section class="container mt-4">
+  <h2 class="text-center mb-4">GALERÍA</h2>
+
+  <div class="row g-3">
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <img src="img1.jpg" class="galeria-img">
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <img src="img2.jpg" class="galeria-img">
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <img src="img3.jpg" class="galeria-img">
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <img src="img4.jpg" class="galeria-img">
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <img src="img5.jpg" class="galeria-img">
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <img src="img6.jpg" class="galeria-img">
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <img src="img7.jpg" class="galeria-img">
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <img src="imgcamisamostasa.jpg" class="galeria-img">
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+      <img src="imgmorada.jpg" class="galeria-img">
+    </div>
+
+  </div>
+</section>
+`,
+        contrataciones: `
+<section class="contrato-section">
+  <div class="contrato-container">
+
+    <h2 class="text-center mb-4">
+      CONTRATO DE PRESTACIÓN DE SERVICIOS ARTÍSTICOS
+    </h2>
+
+    <div class="contrato-grid">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="contrato-datos">
+        <h5>DATOS DEL CONTRATANTE</h5>
+
+        <label>Nombre completo</label>
+<input type="text" id="nombreContratante" oninput="calcularContratacion()">
+
+<label>Documento</label>
+<input type="text" id="documentoContratante" oninput="calcularContratacion()">
+
+<label>Dirección</label>
+<input type="text" id="direccionContratante" oninput="calcularContratacion()">
+
+<label>Teléfono</label>
+<input type="text" id="telefonoContratante" oninput="calcularContratacion()">
+
+<label>Correo electrónico</label>
+<input type="email" id="correoContratante" oninput="calcularContratacion()">
+
+<label>Lugar del evento</label>
+<input type="text" id="lugarEvento" oninput="calcularContratacion()">
+
+<label>Fecha de inicio del evento</label>
+<input type="date" id="fechaInicio" oninput="calcularContratacion()">
+
+<label>Fecha de finalización del evento</label>
+<input type="date" id="fechaFin" oninput="calcularContratacion()">
+
+<label>Hora de inicio del evento</label>
+<input type="time" id="horaInicio" oninput="calcularContratacion()">
+
+<label>Hora de finalización del evento</label>
+<input type="time" id="horaFin" oninput="calcularContratacion()">
+
+
+<h4>Servicios que desea contratar</h4>
+
+<!-- SHOW BASE -->
+<div class="form-check">
+  <input type="radio" name="showContrato" class="form-check-input" id="solistaContrato" value="1000000" onchange="calcularContratacion()">
+  <label class="form-check-label" for="solistaContrato">
+    🎤 Cantante solista — $1.000.000 x hora
+  </label>
+</div>
+
+<div class="form-check">
+  <input type="radio" name="showContrato" class="form-check-input" id="agrupacionContrato" value="2000000" onchange="calcularContratacion()">
+  <label class="form-check-label" for="agrupacionContrato">
+    🎶 Cantante con agrupación / Parrando llanero — $2.000.000 x hora
+  </label>
+</div>
+
+<div class="form-check">
+  <input type="radio" name="showContrato" class="form-check-input" id="empresaContrato" value="4000000" onchange="calcularContratacion()">
+  <label class="form-check-label" for="empresaContrato">
+    🏢 Evento empresarial — $4.000.000 x hora
+  </label>
+</div>
+
+<div class="form-check">
+  <input type="radio" name="showContrato" class="form-check-input" id="festivalContrato" value="7000000" onchange="calcularContratacion()">
+  <label class="form-check-label" for="festivalContrato">
+    🎪 Festival (show de música llanera) — $7.000.000
+  </label>
+</div>
+
+<hr>
+
+<!-- EXTRAS MUSICALES -->
+<div class="form-check">
+  <input type="checkbox" class="form-check-input servicioContrato" id="versosContrato" value="500000" onchange="calcularContratacion()">
+  <label class="form-check-label" for="versosContrato">
+    🎼 Versos improvisados – contrapunteo ($500.000)
+  </label>
+</div>
+
+<div class="form-check">
+  <input type="checkbox" class="form-check-input servicioContrato" id="instrumentosContrato" value="200000" onchange="calcularContratacion()">
+  <label class="form-check-label" for="instrumentosContrato">
+    🎻 Instrumentos adicionales — $200.000 cada uno
+  </label>
+</div>
+
+<hr>
+
+<!-- EXTRAS VISUALES -->
+<div class="form-check">
+  <input type="checkbox" class="form-check-input servicioContrato" id="parejaContrato" value="200000" onchange="calcularContratacion()">
+  <label class="form-check-label" for="parejaContrato">
+    💃 Pareja de baile individual — $200.000
+  </label>
+</div>
+
+<div class="form-check">
+  <input type="checkbox" class="form-check-input servicioContrato" id="grupoCoreoContrato" value="1000000" onchange="calcularContratacion()">
+  <label class="form-check-label" for="grupoCoreoContrato">
+    💃🕺 Grupo coreográfico — $1.000.000 (seis parejas)
+  </label>
+</div>
+
+
+
+
+      </div>
+
+      <!-- COLUMNA CENTRAL -->
+      <div class="contrato-texto">
+        <p>
+Entre los suscritos a saber, por una parte
+<strong>JAIVER CASTRO GUERRERO</strong>,
+conocido artísticamente como
+<strong>EL ZURDO DE ORO</strong>,
+en adelante EL CONTRATISTA, y por la otra
+<strong><span id="verNombre">________________</span></strong>,
+identificado(a) con documento
+<strong><span id="verDocumento">________________</span></strong>,
+domiciliado(a) en
+<strong><span id="verDireccion">________________</span></strong>,
+teléfono
+<strong><span id="verTelefono">________________</span></strong>,
+correo electrónico
+<strong><span id="verCorreo">________________</span></strong>,
+en adelante EL CONTRATANTE,
+se celebra el presente Contrato de Prestación
+de Servicios Artísticos.
+ el cual se regirá por las siguientes cláusulas:
+        </p>
+
+        <p><strong>PRIMERA. OBJETO.</strong><br>
+        El CONTRATISTA se obliga a prestar sus servicios
+        artísticos como cantante de música llanera
+        en vivo para el evento contratado.</p>
+
+        <p><strong>SEGUNDA. LUGAR, FECHA Y DURACIÓN.</strong><br>
+Lugar del evento:
+<strong><span id="verLugar">________________</span></strong><br>
+
+Fecha inicio del evento:
+<strong><span id="verFechaInicio">________________</span></strong><br>
+
+Fecha finalización del evento:
+<strong><span id="verFechaFin">________________</span></strong><br>
+
+Hora de inicio:
+<strong><span id="verHoraInicio">__:__</span></strong>
+&nbsp;&nbsp;
+Hora de finalización:
+<strong><span id="verHoraFin">__:__</span></strong>
+</p>
+
+<p><strong>SERVICIOS CONTRATADOS:</strong></p>
+<ul id="listaServiciosContrato">
+  <li>________________</li>
+</ul>
+
+
+
+
+        <p><strong>TERCERA. HONORARIOS.</strong><br>
+        El valor total del contrato es de
+        <strong id="valorContrato">$0</strong>
+        moneda legal colombiana.</p>
+
+        <p><strong>CUARTA. FORMA DE PAGO.</strong><br>
+        El pago se realizará de común acuerdo entre
+        las partes, pudiendo incluir anticipo y saldo.</p>
+
+        <p><strong>QUINTA. OBLIGACIONES.</strong><br>
+        El CONTRATANTE garantizará las condiciones
+        técnicas, logísticas y de seguridad necesarias
+        para la presentación artística.</p>
+      </div>
+
+    </div>
+
+    <!-- PIE DEL CONTRATO -->
+<div class="contrato-footer">
+  <a href="https://nequi.com/" target="_blank" class="btn btn-success btn-lg d-flex align-items-center justify-content-center gap-2">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Nequi_Logo.png" alt="Nequi" style="width:24px; height:24px;">
+    PAGO CON NEQUI
+  </a>
+</div>
+
+
+        <div class="firmas">
+
+  <!-- NOMBRE DEL CONTRATANTE -->
+<div>
+  <p><strong>Contratante:</strong></p>
+  <p><span id="verNombreFirma">________________</span></p>
+</div>
+
+
+
+
+  <!-- FIRMA CONTRATISTA -->
+  <div>
+        <strong>JAIVER CASTRO GUERRERO</strong>
+  </div>
+
+</div>
+
+</section>
+`,
+
+        videos: `
+<section class="container mt-4 videos-section">
+  <h2 class="text-center mb-4">VIDEOS OFICIALES</h2>
+  <div class="row g-4">
+
+    <div class="col-12 col-md-6">
+      <div class="video-card">
+        <h5 class="text-center mb-2">Soy Acacireño</h5>
+
+        <a class="video-thumb-link" target="_blank"
+           href="https://www.youtube.com/watch?v=6EBzzt31POQ">
+          <img class="video-thumb"
+               src="https://i.ytimg.com/vi/6EBzzt31POQ/hqdefault.jpg"
+               alt="Soy Acacireño - Jaiver Castro">
+          <div class="video-overlay">
+            <span class="video-play">▶</span>
+            <span class="video-cta">Ver en YouTube</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="video-card">
+        <h5 class="text-center mb-2">La Ingrata</h5>
+
+        <a class="video-thumb-link" target="_blank"
+   href="https://www.youtube.com/watch?v=um-byKbUc3Y">
+  <img class="video-thumb"
+       src="https://i.ytimg.com/vi/um-byKbUc3Y/hqdefault.jpg"
+       alt="La Ingrata - Jaiver Castro">
+          <div class="video-overlay">
+            <span class="video-play">▶</span>
+            <span class="video-cta">Ver en YouTube</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="video-card">
+        <h5 class="text-center mb-2">Se Marchó Mamá</h5>
+
+        <a class="video-thumb-link" target="_blank"
+           href="https://www.youtube.com/watch?v=_JoiSc8_AZ0">
+          <img class="video-thumb"
+               src="https://i.ytimg.com/vi/_JoiSc8_AZ0/hqdefault.jpg"
+               alt="Se Marchó Mamá - Jaiver Castro">
+          <div class="video-overlay">
+            <span class="video-play">▶</span>
+            <span class="video-cta">Ver en YouTube</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="video-card">
+        <h5 class="text-center mb-2">Clásicos de la Música Llanera</h5>
+
+        <a class="video-thumb-link" target="_blank"
+           href="https://www.youtube.com/watch?v=npzh4msgGw4">
+          <img class="video-thumb"
+               src="https://i.ytimg.com/vi/npzh4msgGw4/hqdefault.jpg"
+               alt="Clásicos de la Música Llanera - Jaiver Castro">
+          <div class="video-overlay">
+            <span class="video-play">▶</span>
+            <span class="video-cta">Ver en YouTube</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <div class="video-card">
+        <h5 class="text-center mb-2">Festival del Retorno</h5>
+
+        <a class="video-thumb-link" target="_blank"
+           href="https://www.youtube.com/watch?v=ZxCusI4W5Os">
+          <img class="video-thumb"
+               src="https://i.ytimg.com/vi/ZxCusI4W5Os/hqdefault.jpg"
+               alt="Festival del Retorno - Jaiver Castro">
+          <div class="video-overlay">
+            <span class="video-play">▶</span>
+            <span class="video-cta">Ver en YouTube</span>
+          </div>
+    
+        </a>
+      </div>
+
+      
+    </div>
+
+    <div class="col-12 col-md-6">
+  <div class="video-card">
+    <h5 class="text-center mb-2">Me voy pal llano señores</h5>
+
+    <a class="video-thumb-link" target="_blank"
+       href="https://www.youtube.com/watch?v=UJBLK7-xtCo">
+      <img class="video-thumb"
+           src="https://i.ytimg.com/vi/UJBLK7-xtCo/hqdefault.jpg"
+           alt="Me voy pal llano señores - Jaiver Castro">
+      <div class="video-overlay">
+        <span class="video-play">▶</span>
+        <span class="video-cta">Ver en YouTube</span>
+      </div>
+    </a>
+  </div>
+</div>
+
+
+  </div>
+</section>
+`,
+
+
+      musica: `
+<section class="musica-hero">
+  <div class="container py-5">
+    <div class="musica-card">
+      <div class="musica-head">
+        <h2 class="musica-title">MÚSICA</h2>
+        <p class="musica-subtitle">Álbum: <strong>Defendiendo mi Joropo</strong></p>
+      </div>
+
+      <div class="musica-layout">
+        <div class="musica-cover">
+          <div class="musica-embed">
+  <iframe
+    allow="autoplay *; encrypted-media *;"
+    frameborder="0"
+    sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+    src="https://embed.music.apple.com/za/album/defendiendo-mi-joropo/1549660205">
+  </iframe>
+</div>
+          <a class="btn btn-success w-100 mt-3" target="_blank"
+             href="https://music.apple.com/za/album/defendiendo-mi-joropo/1549660205">
+            Escuchar en Apple Music
+          </a>
+        </div>
+
+        <div class="musica-tracklist">
+          <h5 class="musica-track-title">Lista de reproducción</h5>
+
+   <ol class="tracklist">
+  <li><span class="track-name">Cerveza y Olvido (Remasterizado)</span></li>
+  <li><span class="track-name">Invierno y verano (Remasterizado)</span></li>
+  <li><span class="track-name">Dedicación de Amor (Remasterizado)</span></li>
+  <li><span class="track-name">Viejo (Remasterizado)</span></li>
+  <li><span class="track-name">Mis correderos (Remasterizado)</span></li>
+  <li><span class="track-name">Mujer que no jode es macho (Remasterizado)</span></li>
+  <li><span class="track-name">Gabán de los cuatro llanos (Remasterizado)</span></li>
+  <li><span class="track-name">Homenaje a Michael (Remasterizado)</span></li>
+  <li><span class="track-name">Destino y distancia (Remasterizado)</span></li>
+  <li><span class="track-name">Desilusión (Remasterizado)</span></li>
+  <li><span class="track-name">Serrero soy (Remasterizado)</span></li>
+  <li><span class="track-name">Romance diamantino (Remasterizado)</span></li>
+  <li><span class="track-name">Linda madre (Remasterizado)</span></li>
+  <li><span class="track-name">Sin rumbo (Remasterizado)</span></li>
+  <li><span class="track-name">Sabor a llano (Remasterizado)</span></li>
+</ol>
+
+
+          <div class="text-center mt-3">
+            <a target="_blank" class="btn btn-outline-light"
+               href="https://music.apple.com/za/album/defendiendo-mi-joropo/1549660205">
+              Ver álbum completo
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+`,
+
+
+        agenda: "<section class='container my-5'><div class='p-4 rounded shadow bg-white'><h2 class='text-center mb-4'>AGENDA DE PRESENTACIONES – ENERO 2026</h2><table class='table table-bordered table-striped text-center'><thead class='table-dark'><tr><th>Fecha</th><th>Ciudad</th><th>Evento</th><th>Estado</th></tr></thead><tbody><tr><td>05 Enero 2026</td><td>Paz de Ariporo</td><td>Festival Tradiciones Llaneras</td><td><span class='badge bg-success'>Confirmado</span></td></tr><tr><td>10 Enero 2026</td><td>Arauca</td><td>Festival Internacional del Joropo</td><td><span class='badge bg-success'>Confirmado</span></td></tr><tr><td>15 Enero 2026</td><td>Trinidad</td><td>Festival Cultural Llanero</td><td><span class='badge bg-warning text-dark'>Reservado</span></td></tr><tr><td>20 Enero 2026</td><td>Tame</td><td>Encuentro de Música Criolla</td><td><span class='badge bg-secondary'>Disponible</span></td></tr><tr><td>25 Enero 2026</td><td>Villavicencio</td><td>Festival Llanero Nacional</td><td><span class='badge bg-success'>Confirmado</span></td></tr><tr><td>30 Enero 2026</td><td>Yopal</td><td>Gran Parrando Llanero</td><td><span class='badge bg-warning text-dark'>Reservado</span></td></tr></tbody></table></div></section>"
+      };
+      
+
+      const botones = document.querySelectorAll(".btn-epk");
+
+      botones.forEach(boton => {
+        boton.addEventListener("click", (e) => {
+          e.preventDefault();
+          const seccion = boton.dataset.seccion;
+          contenidoEPK.innerHTML = secciones[seccion] || "<p>Sección no disponible</p>";
+        });
+      });
+    });
+    
+  </script>
+
+  <script>
+  document.addEventListener("click", function (e) {
+    if (e.target && e.target.id === "btnCotizar") {
+
+      const total = document.getElementById("total")?.textContent || "$0";
+
+      if (total === "$0") {
+        alert("Por favor selecciona un show para generar la cotización.");
+        return;
+      }
+
+      const mensaje = `
+Hola, quiero una cotización para un evento con El Zurdo de Oro.
+Total estimado: ${total}
+      `.trim();
+
+      const telefono = "573112567804";
+      const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+
+      window.open(url, "_blank");
+    }
+  });
+</script>
+
+<script>
+function calcularTotal() {
+  let total = 0;
+
+
+  const showSeleccionado = document.querySelector('input[name="show"]:checked');
+  if (showSeleccionado) {
+    total += parseInt(showSeleccionado.value);
+  }
+
+    const extras = document.querySelectorAll('.servicio:checked');
+  extras.forEach(extra => {
+    total += parseInt(extra.value);
+  });
+
+    document.getElementById("total").textContent =
+    "$" + total.toLocaleString("es-CO");
+}
+</script>
+<script>
+function calcularContratacion() {
+
+ 
+  const setTexto = (idSpan, idInput, def = "________________") => {
+    const span = document.getElementById(idSpan);
+    const input = document.getElementById(idInput);
+    if (span) span.textContent = input?.value || def;
+  };
+
+  setTexto("verNombre", "nombreContratante");
+  setTexto("verDocumento", "documentoContratante");
+  setTexto("verDireccion", "direccionContratante");
+  setTexto("verTelefono", "telefonoContratante");
+  setTexto("verCorreo", "correoContratante");
+  setTexto("verLugar", "lugarEvento");
+  setTexto("verFechaInicio", "fechaInicio");
+  setTexto("verFechaFin", "fechaFin");
+  setTexto("verHoraInicio", "horaInicio", "__:__");
+  setTexto("verHoraFin", "horaFin", "__:__");
+
+ const nombreInput = document.getElementById("nombreContratante");
+const verNombreFirma = document.getElementById("verNombreFirma");
+if (verNombreFirma && nombreInput) {
+  verNombreFirma.textContent = nombreInput.value || "________________";
+}
+
+  let total = 0;
+  const lista = document.getElementById("listaServiciosContrato");
+  if (lista) lista.innerHTML = "";
+
+ 
+  const show = document.querySelector('input[name="showContrato"]:checked');
+  if (show) {
+    total += parseInt(show.value);
+    if (lista) lista.innerHTML += `<li>${show.nextElementSibling.textContent}</li>`;
+  }
+
+  document.querySelectorAll(".servicioContrato:checked").forEach(extra => {
+    total += parseInt(extra.value);
+    if (lista) lista.innerHTML += `<li>${extra.nextElementSibling.textContent}</li>`;
+  });
+
+  if (lista && lista.innerHTML === "") {
+    lista.innerHTML = "<li>________________</li>";
+  }
+
+  
+  const valorContrato = document.getElementById("valorContrato");
+  if (valorContrato) {
+    valorContrato.textContent = "$" + total.toLocaleString("es-CO");
+  }
+}
+
+
+
+</script>
+
+</body>
+</html>
