@@ -17,7 +17,11 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/contratos")
-@CrossOrigin(origins = "*")
+@CrossOrigin(
+    origins = "*",
+    methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE},
+    allowedHeaders = "*"
+)
 public class ContratoController {
 
     private ContratoDAO dao = new ContratoDAO();
