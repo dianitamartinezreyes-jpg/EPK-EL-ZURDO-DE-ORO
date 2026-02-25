@@ -851,13 +851,13 @@ function enviarContrato() {
         valorTotal: parseInt(document.getElementById("valorContrato")?.textContent.replace(/\D/g,'') || 0)
     };
 
-    console.log("Enviando contrato:", contrato); // Esto aparece en la consola del navegador
+    onsole.log("Enviando contrato:", contrato);
 
-    fetch("http://localhost:8080/contratos", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(contrato)
-    })
+fetch("https://epk-el-zurdo-de-oro-production.up.railway.app/contratos", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(contrato)
+})
     .then(response => response.json())
     .then(data => {
         console.log("Respuesta del backend:", data);
