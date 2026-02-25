@@ -851,7 +851,7 @@ function enviarContrato() {
         valorTotal: parseInt(document.getElementById("valorContrato")?.textContent.replace(/\D/g,'') || 0)
     };
 
-    onsole.log("Enviando contrato:", contrato);
+    console.log("Enviando contrato:", contrato);
 
 fetch("https://epk-el-zurdo-de-oro-production.up.railway.app/contratos", {
     method: "POST",
