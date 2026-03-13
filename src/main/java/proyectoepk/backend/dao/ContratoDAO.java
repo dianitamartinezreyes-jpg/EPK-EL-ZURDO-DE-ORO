@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 
 /**
  * Clase DAO encargada de realizar operaciones CRUD
- * sobre la tabla contrato_epk usando JDBC.
+ * sobre la tabla contrato_epk1 usando JDBC.
  */
 public class ContratoDAO {
 
@@ -17,7 +17,7 @@ public class ContratoDAO {
      */
     public void guardarContrato(Contrato contrato) {
 
-        String sql = "INSERT INTO contrato_epk " +
+        String sql = "INSERT INTO contrato_epk1 " +
                 "(nombre_cliente, documento, direccion, telefono, correo, lugar_evento, " +
                 "fecha_inicio, fecha_fin, hora_inicio, hora_fin, servicios, valor_total, creado_en) " +
                 "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())";
@@ -29,7 +29,6 @@ public class ContratoDAO {
         }
 
         try {
-
             PreparedStatement ps = conexion.prepareStatement(sql);
 
             ps.setString(1, contrato.getNombreCliente());
@@ -50,7 +49,6 @@ public class ContratoDAO {
             System.out.println("✅ Contrato guardado correctamente en la base de datos.");
 
         } catch (SQLException e) {
-
             System.out.println("❌ Error SQL al guardar contrato: " + e.getMessage());
             throw new RuntimeException(e);
         }
@@ -61,7 +59,7 @@ public class ContratoDAO {
      */
     public void listarContratos() {
 
-        String sql = "SELECT * FROM contrato_epk ORDER BY id DESC";
+        String sql = "SELECT * FROM contrato_epk1 ORDER BY id DESC";
 
         Connection conexion = ConexionBD.conectar();
 
@@ -71,12 +69,10 @@ public class ContratoDAO {
         }
 
         try {
-
             PreparedStatement ps = conexion.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
-
                 System.out.println("ID: " + rs.getInt("id"));
                 System.out.println("Cliente: " + rs.getString("nombre_cliente"));
                 System.out.println("Documento: " + rs.getString("documento"));
@@ -94,7 +90,6 @@ public class ContratoDAO {
             }
 
         } catch (SQLException e) {
-
             System.out.println("❌ Error al consultar contratos: " + e.getMessage());
         }
     }
@@ -104,7 +99,7 @@ public class ContratoDAO {
      */
     public void actualizarContrato(Contrato contrato) {
 
-        String sql = "UPDATE contrato_epk SET " +
+        String sql = "UPDATE contrato_epk1 SET " +
                 "nombre_cliente=?, documento=?, direccion=?, telefono=?, correo=?, lugar_evento=?, " +
                 "fecha_inicio=?, fecha_fin=?, hora_inicio=?, hora_fin=?, servicios=?, valor_total=? " +
                 "WHERE id=?";
@@ -117,7 +112,6 @@ public class ContratoDAO {
         }
 
         try {
-
             PreparedStatement ps = conexion.prepareStatement(sql);
 
             ps.setString(1, contrato.getNombreCliente());
@@ -139,7 +133,6 @@ public class ContratoDAO {
             System.out.println("✅ Contrato actualizado correctamente");
 
         } catch (SQLException e) {
-
             System.out.println("❌ Error al actualizar contrato: " + e.getMessage());
         }
     }
@@ -149,7 +142,7 @@ public class ContratoDAO {
      */
     public void eliminarContrato(int id) {
 
-        String sql = "DELETE FROM contrato_epk WHERE id=?";
+        String sql = "DELETE FROM contrato_epk1 WHERE id=?";
 
         Connection conexion = ConexionBD.conectar();
 
@@ -159,7 +152,6 @@ public class ContratoDAO {
         }
 
         try {
-
             PreparedStatement ps = conexion.prepareStatement(sql);
             ps.setInt(1, id);
 
@@ -168,7 +160,6 @@ public class ContratoDAO {
             System.out.println("✅ Contrato eliminado correctamente");
 
         } catch (SQLException e) {
-
             System.out.println("❌ Error al eliminar contrato: " + e.getMessage());
         }
     }
