@@ -7,16 +7,13 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 
 /**
- * Clase DAO (Data Access Object) encargada de realizar
- * las operaciones CRUD sobre la tabla contrato_epk
- * utilizando JDBC para la conexión con MySQL.
+ * Clase DAO encargada de realizar operaciones CRUD
+ * sobre la tabla contrato_epk usando JDBC.
  */
 public class ContratoDAO {
 
     /**
      * Inserta un nuevo contrato en la base de datos.
-     *
-     * @param contrato Objeto que contiene los datos del contrato a guardar.
      */
     public void guardarContrato(Contrato contrato) {
 
@@ -27,10 +24,14 @@ public class ContratoDAO {
 
         Connection conexion = ConexionBD.conectar();
 
+        if (conexion == null) {
+            throw new RuntimeException("No se pudo conectar a la base de datos.");
+        }
+
         try {
+
             PreparedStatement ps = conexion.prepareStatement(sql);
 
-            // Asignación de parámetros del contrato a la consulta SQL
             ps.setString(1, contrato.getNombreCliente());
             ps.setString(2, contrato.getDocumento());
             ps.setString(3, contrato.getDireccion());
@@ -45,28 +46,37 @@ public class ContratoDAO {
             ps.setDouble(12, contrato.getValorTotal());
 
             ps.executeUpdate();
-            System.out.println("✅ Contrato guardado correctamente en contrato_epk");
+
+            System.out.println("✅ Contrato guardado correctamente en la base de datos.");
 
         } catch (SQLException e) {
-            System.out.println("❌ Error al guardar contrato: " + e.getMessage());
+
+            System.out.println("❌ Error SQL al guardar contrato: " + e.getMessage());
+            throw new RuntimeException(e);
         }
     }
 
     /**
-     * Consulta y muestra en consola todos los contratos
-     * registrados en la base de datos.
+     * Lista los contratos registrados.
      */
     public void listarContratos() {
 
         String sql = "SELECT * FROM contrato_epk ORDER BY id DESC";
+
         Connection conexion = ConexionBD.conectar();
 
+        if (conexion == null) {
+            System.out.println("❌ No se pudo conectar a la base de datos.");
+            return;
+        }
+
         try {
+
             PreparedStatement ps = conexion.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
-            // Recorrido de los resultados obtenidos
             while (rs.next()) {
+
                 System.out.println("ID: " + rs.getInt("id"));
                 System.out.println("Cliente: " + rs.getString("nombre_cliente"));
                 System.out.println("Documento: " + rs.getString("documento"));
@@ -84,15 +94,13 @@ public class ContratoDAO {
             }
 
         } catch (SQLException e) {
+
             System.out.println("❌ Error al consultar contratos: " + e.getMessage());
         }
     }
 
     /**
-     * Actualiza la información de un contrato existente
-     * según su ID.
-     *
-     * @param contrato Objeto con los datos actualizados.
+     * Actualiza un contrato existente.
      */
     public void actualizarContrato(Contrato contrato) {
 
@@ -103,10 +111,15 @@ public class ContratoDAO {
 
         Connection conexion = ConexionBD.conectar();
 
+        if (conexion == null) {
+            System.out.println("❌ No se pudo conectar a la base de datos.");
+            return;
+        }
+
         try {
+
             PreparedStatement ps = conexion.prepareStatement(sql);
 
-            // Asignación de nuevos valores
             ps.setString(1, contrato.getNombreCliente());
             ps.setString(2, contrato.getDocumento());
             ps.setString(3, contrato.getDireccion());
@@ -122,32 +135,40 @@ public class ContratoDAO {
             ps.setInt(13, contrato.getId());
 
             ps.executeUpdate();
+
             System.out.println("✅ Contrato actualizado correctamente");
 
         } catch (SQLException e) {
+
             System.out.println("❌ Error al actualizar contrato: " + e.getMessage());
         }
     }
 
     /**
-     * Elimina un contrato de la base de datos
-     * según el ID proporcionado.
-     *
-     * @param id Identificador del contrato a eliminar.
+     * Elimina un contrato por ID.
      */
     public void eliminarContrato(int id) {
 
         String sql = "DELETE FROM contrato_epk WHERE id=?";
+
         Connection conexion = ConexionBD.conectar();
 
+        if (conexion == null) {
+            System.out.println("❌ No se pudo conectar a la base de datos.");
+            return;
+        }
+
         try {
+
             PreparedStatement ps = conexion.prepareStatement(sql);
             ps.setInt(1, id);
 
             ps.executeUpdate();
+
             System.out.println("✅ Contrato eliminado correctamente");
 
         } catch (SQLException e) {
+
             System.out.println("❌ Error al eliminar contrato: " + e.getMessage());
         }
     }
