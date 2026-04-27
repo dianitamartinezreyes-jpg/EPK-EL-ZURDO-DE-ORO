@@ -505,11 +505,6 @@ Hora de finalización:
 
     </div>
 
-    <button type="button" id="enviarContrato" class="btn btn-primary btn-lg mt-3">
-  Enviar contrato
-</button>
-
-
     <!-- PIE DEL CONTRATO -->
 <div class="contrato-footer">
   <a href="https://nequi.com/" target="_blank" class="btn btn-success btn-lg d-flex align-items-center justify-content-center gap-2">
@@ -718,62 +713,22 @@ Hora de finalización:
 `,
 
 
-     agenda: `
-<section class='container my-5'>
-  <div class='p-4 rounded shadow bg-white'>
-    <h2 class='text-center mb-4'>AGENDA DE PRESENTACIONES – 2026</h2>
+        agenda: "<section class='container my-5'><div class='p-4 rounded shadow bg-white'><h2 class='text-center mb-4'>AGENDA DE PRESENTACIONES – ENERO 2026</h2><table class='table table-bordered table-striped text-center'><thead class='table-dark'><tr><th>Fecha</th><th>Ciudad</th><th>Evento</th><th>Estado</th></tr></thead><tbody><tr><td>05 Enero 2026</td><td>Paz de Ariporo</td><td>Festival Tradiciones Llaneras</td><td><span class='badge bg-success'>Confirmado</span></td></tr><tr><td>10 Enero 2026</td><td>Arauca</td><td>Festival Internacional del Joropo</td><td><span class='badge bg-success'>Confirmado</span></td></tr><tr><td>15 Enero 2026</td><td>Trinidad</td><td>Festival Cultural Llanero</td><td><span class='badge bg-warning text-dark'>Reservado</span></td></tr><tr><td>20 Enero 2026</td><td>Tame</td><td>Encuentro de Música Criolla</td><td><span class='badge bg-secondary'>Disponible</span></td></tr><tr><td>25 Enero 2026</td><td>Villavicencio</td><td>Festival Llanero Nacional</td><td><span class='badge bg-success'>Confirmado</span></td></tr><tr><td>30 Enero 2026</td><td>Yopal</td><td>Gran Parrando Llanero</td><td><span class='badge bg-warning text-dark'>Reservado</span></td></tr></tbody></table></div></section>"
+      };
+      
+
+      const botones = document.querySelectorAll(".btn-epk");
+
+      botones.forEach(boton => {
+        boton.addEventListener("click", (e) => {
+          e.preventDefault();
+          const seccion = boton.dataset.seccion;
+          contenidoEPK.innerHTML = secciones[seccion] || "<p>Sección no disponible</p>";
+        });
+      });
+    });
     
-    <table class='table table-bordered table-striped text-center'>
-      <thead class='table-dark'>
-        <tr>
-          <th>Fecha</th>
-          <th>Ciudad</th>
-          <th>Evento</th>
-          <th>Estado</th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <tr>
-          <td>21 Marzo 2026</td>
-          <td>Villanueva - Casanare</td>
-          <td>Evento Llanero</td>
-          <td><span class='badge bg-success'>Confirmado</span></td>
-        </tr>
-
-        <tr>
-          <td>22 Marzo 2026</td>
-          <td>Aguazul - Casanare</td>
-          <td>Evento Llanero</td>
-          <td><span class='badge bg-success'>Confirmado</span></td>
-        </tr>
-
-        <tr>
-          <td>01 Abril 2026</td>
-          <td>Castilla la Nueva - Meta</td>
-          <td>Evento Cultural</td>
-          <td><span class='badge bg-warning text-dark'>Reservado</span></td>
-        </tr>
-
-        <tr>
-          <td>02 Mayo 2026</td>
-          <td>Cubarral - Meta</td>
-          <td>Evento Cultural</td>
-          <td><span class='badge bg-secondary'>Disponible</span></td>
-        </tr>
-
-        <tr>
-          <td>02 Mayo 2026</td>
-          <td>Villavicencio - Meta</td>
-          <td>Presentación Especial</td>
-          <td><span class='badge bg-success'>Confirmado</span></td>
-        </tr>
-      </tbody>
-    </table>
-
-  </div>
-</section>
-`
+  </script>
 
   <script>
   document.addEventListener("click", function (e) {
@@ -875,65 +830,6 @@ if (verNombreFirma && nombreInput) {
 
 
 </script>
-
-<script>
-document.addEventListener("click", function (e) {
-  if (e.target && e.target.id === "enviarContrato") {
-
-  
-
-    // Obtenemos los servicios seleccionados
-    const servicios = [];
-    const show = document.querySelector('input[name="showContrato"]:checked');
-    if (show) servicios.push({ nombre: show.nextElementSibling.textContent, precio: parseInt(show.value) });
-
-    document.querySelectorAll(".servicioContrato:checked").forEach(extra => {
-      servicios.push({ nombre: extra.nextElementSibling.textContent, precio: parseInt(extra.value) });
-    });
-
-    // Calculamos total
-    const total = servicios.reduce((acc, s) => acc + s.precio, 0);
-const contrato = {
-  nombreCliente: document.getElementById("nombreContratante")?.value || "",
-  documento: document.getElementById("documentoContratante")?.value || "",
-  direccion: document.getElementById("direccionContratante")?.value || "",
-  telefono: document.getElementById("telefonoContratante")?.value || "",
-  correo: document.getElementById("correoContratante")?.value || "",
-  lugarEvento: document.getElementById("lugarEvento")?.value || "",
-  fechaInicio: document.getElementById("fechaInicio")?.value || "",
-  fechaFin: document.getElementById("fechaFin")?.value || "",
-  horaInicio: document.getElementById("horaInicio")?.value || "",
-  horaFin: document.getElementById("horaFin")?.value || "",
-  servicios: servicios.map(s => s.nombre).join(", "),
-  valorTotal: total
-};
-  
-    // Aquí haces la acción de envío, por ejemplo POST al servidor
-    fetch("https://epk-el-zurdo-de-oro-production.up.railway.app/contratos", {
-  method: "POST",
-  headers: { "Content-Type": "application/json" },
-  body: JSON.stringify(contrato)
-})
-    .then(async res => {
-  const texto = await res.text();
-  console.log("Respuesta del backend:", texto);
-
-  if (!res.ok) {
-    throw new Error("Error HTTP " + res.status + ": " + texto);
-  }
-
-  alert("Contrato enviado correctamente.");
-})
-.catch(err => {
-  console.error("Error al enviar el contrato:", err);
-  alert("Error al enviar el contrato. Revisa la consola.");
-});
-
-  }
-});
-</script>
-
-
 
 </body>
 </html>
